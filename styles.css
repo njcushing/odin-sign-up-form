@@ -17,6 +17,7 @@ body {
     --side-panel-max-width: 30vw;
     --side-panel-optimal-width: 30vw;
     --side-panel-min-width: 10vw;
+    --text-input-field-height: 20px;
     --header-font-family: Nunito, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -39,48 +40,74 @@ li {
     background-color: rgb(240, 243, 245);
 }
 .header-section {
+    color: rgb(30, 30, 30);
     flex-shrink: 1;
     padding: 160px var(--content-horizontal-padding, 30px) 30px;
     font-family: var(--header-font-family);
     font-weight: bold;
     line-height: 1.2em;
 }
-.form-section {
-    
-}
 .form-title {
+    color: rgb(30, 30, 30);
+    background-color: white;
     padding: 20px var(--content-horizontal-padding, 30px) 0px;
     font-family: var(--header-font-family);
     font-weight: bold;
+}
+.requirement-info {
+    padding: 30px var(--content-horizontal-padding, 30px) 0px;
+    font-family: var(--header-font-family);
+    font-size: 0.5em;
     background-color: white;
 }
 .form-content-inputs {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px 70px;
-    padding: 30px var(--content-horizontal-padding, 30px) 44px;
+    gap: 24px 70px;
+    padding: 10px var(--content-horizontal-padding, 30px) 44px;
     font-family: var(--header-font-family);
-    font-weight: bold;
     background-color: white;
     box-shadow: 6px 6px 5px rgba(60, 60, 60, 0.3);
 }
 .form-content-inputs input {
     font-size: 0.6em;
-    font-weight: bold;
     border-radius: 6px;
     border: 1px solid #000;
     min-width: 80px;
     width: 220px;
-    height: 20px;
+    height: var(--text-input-field-height, 20px);
+}
+.form-content-inputs input:invalid {
+    border-color: red;
 }
 .form-content .form-input-label {
+    position: relative;
     display: block;
     font-size: 0.5em;
     font-weight: bold;
     margin-bottom: -6px;
     letter-spacing: 0.08em;
     color: rgb(32, 32, 32);
+}
+.form-content .form-input-label::before {
+    position: absolute;
+    color: red;
+    content: "";
+    font-weight: normal;
+    top: calc(var(--text-input-field-height, 20px) + 22px);
+}
+.form-content .form-input-label.label-first-name::before {
+    content: "Please enter a valid name";
+}
+.form-content .form-input-label.label-last-name::before {
+    content: "Please enter a valid name";
+}
+.form-content .form-input-label.label-email::before {
+    content: "Please enter a valid email address";
+}
+.form-content .form-input-label.label-password-primary::before {
+    content: "Passwords do not match";
 }
 .form-content button {
     color: rgb(235, 235, 235);
