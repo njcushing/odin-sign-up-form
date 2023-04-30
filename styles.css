@@ -9,7 +9,9 @@ body {
     margin: 0;
     --display-max-height: 100vh;
     --display-min-width: 100vw;
-    --side-panel-max-width: 30vh;
+    --side-panel-max-width: 600px;
+    --side-panel-optimal-width: 35vw;
+    --side-panel-min-width: 200px;
     --header-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -21,15 +23,16 @@ body {
 }
 
 .side-panel {
-    max-width: var(--side-panel-max-width, 60vh);
-}
-
-.side-panel img {
-    max-height: inherit;
-    max-width: inherit;
+    width: clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 35vw), var(--side-panel-max-width, 400px));
+    height: var(--display-max-height, 100vh);
+    background-image: url(./img/hamdhulla-shakeeb-seaside-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto clamp(600px, var(--display-max-height, 100vh), 100vh);
 }
 
 .content {
+    width: clamp(200px, 70vw, 10000px);
     background-color: rgb(201, 201, 201);
 }
 .header-section {
