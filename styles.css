@@ -12,6 +12,7 @@ body {
     --display-min-width: 100vw;
     --content-min-width: 600px;
     --content-optimal-width: 70vw;
+    --content-horizontal-padding: 60px;
     --side-panel-max-width: 30vw;
     --side-panel-optimal-width: 30vw;
     --side-panel-min-width: 10vw;
@@ -19,11 +20,49 @@ body {
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+li {
+    list-style: none;
+}
+
 .main {
     display: flex;
     flex-direction: row-reverse;
     max-height: var(--display-max-height, 100vh);
     min-width: var(--display-min-width, 100vh);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: max(var(--content-min-width, 600px), var(--content-optimal-width, 70vw));
+    background-color: rgb(180, 217, 250);
+}
+.header-section {
+    padding: 30px var(--content-horizontal-padding, 30px);
+    font-family: var(--header-font-family);
+    font-weight: bold;
+    line-height: 1.2em;
+    background-color: rgb(243, 243, 243);
+}
+.form-section {
+    
+}
+.form-title {
+    padding: 30px var(--content-horizontal-padding, 30px);
+    font-family: var(--header-font-family);
+    font-weight: bold;
+}
+.form-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 30px var(--content-horizontal-padding, 30px);
+    font-family: var(--header-font-family);
+    font-weight: bold;
+}
+.form-content .form-input-label {
+    display: block;
+    font-size: 0.5em;
 }
 
 .side-panel {
@@ -64,15 +103,4 @@ body {
     text-align: center;
     font-size: 0.6em;
     color: rgb(226, 226, 226);
-}
-
-.content {
-    width: max(var(--content-min-width, 600px), var(--content-optimal-width, 70vw));
-    background-color: rgb(180, 217, 250);
-}
-.header-section {
-    padding: 30px 60px;
-    font-family: var(--header-font-family);
-    font-weight: bold;
-    background-color: rgb(219, 219, 219);
 }
