@@ -4,14 +4,15 @@
 body {
     font-family: Staatliches, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 24px;
     min-height: 100vh;
     padding: 0;
     margin: 0;
     --display-max-height: 100vh;
     --display-min-width: 100vw;
-    --side-panel-max-width: 600px;
-    --side-panel-optimal-width: 35vw;
-    --side-panel-min-width: 200px;
+    --side-panel-max-width: 30vw;
+    --side-panel-optimal-width: 30vw;
+    --side-panel-min-width: 10vw;
     --header-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -23,16 +24,47 @@ body {
 }
 
 .side-panel {
-    width: clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 35vw), var(--side-panel-max-width, 400px));
+    width: clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 30vw), var(--side-panel-max-width, 400px));
     height: var(--display-max-height, 100vh);
+    position: relative;
     background-image: url(./img/hamdhulla-shakeeb-seaside-unsplash.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto clamp(600px, var(--display-max-height, 100vh), 100vh);
 }
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: absolute;
+    top: 25vh;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+}
+.logo .company-name {
+    text-align: center;
+    font-size: 4em;
+    color: rgb(226, 226, 226);
+}
+.logo img {
+    width: 4em;
+    padding: 20px 10px;
+}
+.credit {
+    position: absolute;
+    bottom: 0px;
+    width: inherit;
+    font-family: var(--header-font-family);
+    text-align: center;
+    font-size: 0.6em;
+    color: rgb(226, 226, 226);
+}
 
 .content {
-    width: clamp(200px, 70vw, 10000px);
+    width: calc(100vw - clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 35vw), var(--side-panel-max-width, 400px)));
     background-color: rgb(201, 201, 201);
 }
 .header-section {
