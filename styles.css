@@ -1,5 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Staatliches&display=swap');
 
 body {
     font-family: Staatliches, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
@@ -16,7 +17,7 @@ body {
     --side-panel-max-width: 30vw;
     --side-panel-optimal-width: 30vw;
     --side-panel-min-width: 10vw;
-    --header-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    --header-font-family: Nunito, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -35,34 +36,61 @@ li {
     display: flex;
     flex-direction: column;
     width: max(var(--content-min-width, 600px), var(--content-optimal-width, 70vw));
-    background-color: rgb(180, 217, 250);
+    background-color: rgb(240, 243, 245);
 }
 .header-section {
-    padding: 30px var(--content-horizontal-padding, 30px);
+    padding: 160px var(--content-horizontal-padding, 30px) 30px;
     font-family: var(--header-font-family);
     font-weight: bold;
     line-height: 1.2em;
-    background-color: rgb(243, 243, 243);
 }
 .form-section {
     
 }
 .form-title {
-    padding: 30px var(--content-horizontal-padding, 30px);
+    padding: 20px var(--content-horizontal-padding, 30px) 0px;
     font-family: var(--header-font-family);
     font-weight: bold;
+    background-color: white;
 }
-.form-content {
+.form-content-inputs {
     display: flex;
     flex-wrap: wrap;
-    gap: 100px;
-    padding: 30px var(--content-horizontal-padding, 30px);
+    align-items: center;
+    gap: 20px 70px;
+    padding: 30px var(--content-horizontal-padding, 30px) 44px;
     font-family: var(--header-font-family);
     font-weight: bold;
+    background-color: white;
+    box-shadow: 6px 6px 5px rgba(60, 60, 60, 0.3);
+}
+.form-content-inputs input {
+    font-size: 0.6em;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #000;
+    min-width: 80px;
+    width: 220px;
+    height: 20px;
 }
 .form-content .form-input-label {
     display: block;
     font-size: 0.5em;
+    font-weight: bold;
+    margin-bottom: -6px;
+    letter-spacing: 0.08em;
+    color: rgb(32, 32, 32);
+}
+.form-content button {
+    color: rgb(235, 235, 235);
+    background-color: #596D48;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 18px 54px;
+    margin: 50px var(--content-horizontal-padding, 30px) 50px;
+    box-shadow: 4px 4px 5px rgba(60, 60, 60, 0.2);
 }
 
 .side-panel {
