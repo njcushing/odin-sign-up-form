@@ -10,6 +10,8 @@ body {
     margin: 0;
     --display-max-height: 100vh;
     --display-min-width: 100vw;
+    --content-min-width: 600px;
+    --content-optimal-width: 70vw;
     --side-panel-max-width: 30vw;
     --side-panel-optimal-width: 30vw;
     --side-panel-min-width: 10vw;
@@ -19,6 +21,7 @@ body {
 
 .main {
     display: flex;
+    flex-direction: row-reverse;
     max-height: var(--display-max-height, 100vh);
     min-width: var(--display-min-width, 100vh);
 }
@@ -64,9 +67,12 @@ body {
 }
 
 .content {
-    width: calc(100vw - clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 35vw), var(--side-panel-max-width, 400px)));
-    background-color: rgb(201, 201, 201);
+    width: max(var(--content-min-width, 600px), var(--content-optimal-width, 70vw));
+    background-color: rgb(180, 217, 250);
 }
 .header-section {
+    padding: 30px 60px;
     font-family: var(--header-font-family);
+    font-weight: bold;
+    background-color: rgb(219, 219, 219);
 }
