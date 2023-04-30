@@ -93,6 +93,14 @@ li {
     margin: 44px var(--content-horizontal-padding, 30px) 36px;
     box-shadow: 4px 4px 5px rgba(60, 60, 60, 0.2);
 }
+.form-content button:hover {
+    color: rgb(255, 255, 255);
+    background-color: #6d8a54;
+}
+.form-content button:active {
+    color: rgb(212, 212, 212);
+    background-color: #3e4d32;
+}
 .log-in {
     font-family: var(--header-font-family);
     font-size: 0.7em;
