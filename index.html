@@ -64,21 +64,24 @@
                                         placeholder=" " required>
                                     <label class="form-input-label label-password-primary"
                                         for="password-primary"
-                                        help="Passwords do not match"
+                                        help="Invalid Password"
+                                        error="Passwords do not match"
                                         >PASSWORD*</label>
                                 </li>
                                 <li>
                                     <input type="password" id="password-secondary" name="password"
                                         title="Please enter a valid password and ensure it matches the original"
+                                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
                                         placeholder=" " required>
                                     <label class="form-input-label label-password-secondary"
                                         for="password-secondary"
-                                        help=""
+                                        help="Invalid Password"
+                                        error=""
                                         >CONFIRM PASSWORD*</label>
                                 </li>
                             </div>
                             <div class="password-requirements">
-                                <div>Your password must contain the following</div>
+                                <div>Your password must contain the following:</div>
                                 <li>At least 8 characters</li>
                                 <li>At least one letter from a-z</li>
                                 <li>At least one digit from 0-9</li>

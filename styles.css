@@ -118,6 +118,15 @@ li {
 .form-content-inputs input:valid + label::before {
     color: transparent;
 }
+.form-content-inputs input.error + label::before {
+    color: red;
+    content: attr(error);
+}
+.form-content .form-content-inputs .form-content-inputs-container input.error {
+    outline-color: red;
+    background-color: rgba(255, 106, 106, 0.18);
+    border-color: red;
+}
 .password-requirements {
     align-self: flex-end;
 }
