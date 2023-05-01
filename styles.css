@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
+    --page-max-width: 1440px;
+    --page-max-height: 1024px;
     --display-max-height: 100vh;
     --display-min-width: 100vw;
     --content-min-width: 600px;
@@ -63,12 +65,18 @@ li {
 .form-content-inputs {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 24px 70px;
     padding: 10px var(--content-horizontal-padding, 30px) 44px;
     font-family: var(--header-font-family);
     background-color: white;
     box-shadow: 6px 6px 5px rgba(60, 60, 60, 0.3);
+}
+.form-content-inputs-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px 70px;
+    width: 560px;
+    padding-bottom: 0.7em;
 }
 .form-content-inputs input {
     font-size: 0.6em;
@@ -78,8 +86,15 @@ li {
     width: 220px;
     height: var(--text-input-field-height, 20px);
 }
-.form-content-inputs input:invalid {
+.form-content-inputs input:not(:placeholder-shown):invalid {
+    outline-color: red;
+    background-color: rgba(255, 106, 106, 0.18);
     border-color: red;
+}
+.form-content-inputs input:not(:placeholder-shown):valid {
+    outline-color: rgb(31, 187, 0);
+    background-color: rgba(123, 255, 106, 0.18);
+    border-color: rgb(31, 187, 0);
 }
 .form-content .form-input-label {
     position: relative;
@@ -97,6 +112,12 @@ li {
     font-weight: normal;
     top: calc(var(--text-input-field-height, 20px) + 22px);
 }
+.form-content-inputs input:not(:placeholder-shown):not(:focus):valid ::before {
+    color: transparent;
+}
+.form-content .form-input-label:hover::before {
+    color: blue;
+}
 .form-content .form-input-label.label-first-name::before {
     content: "Please enter a valid name";
 }
@@ -108,6 +129,17 @@ li {
 }
 .form-content .form-input-label.label-password-primary::before {
     content: "Passwords do not match";
+}
+.password-requirements {
+    align-self: flex-end;
+}
+.password-requirements div {
+    font-size: 0.6em;
+}
+.password-requirements li {
+    list-style: square;
+    font-size: 0.5em;
+    color: rgb(11, 175, 11);
 }
 .form-content button {
     color: rgb(235, 235, 235);
@@ -132,9 +164,11 @@ li {
     font-family: var(--header-font-family);
     font-size: 0.7em;
     font-weight: bold;
+    text-decoration: none;
     padding: 0px var(--content-horizontal-padding, 30px);
 }
 .log-in-link {
+    text-decoration: none;
     color: rgb(37, 110, 37);
 }
 .log-in-link:hover {
@@ -181,5 +215,17 @@ li {
     font-family: var(--header-font-family);
     text-align: center;
     font-size: 0.6em;
+    font-weight: bold;
     color: rgb(226, 226, 226);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.credit a {
+    color: rgb(39, 189, 39);
+    text-decoration: none;
+}
+.credit a:hover {
+    color: rgb(66, 228, 66);
+}
+.credit a:active {
+    color: rgb(24, 139, 24);
 }
