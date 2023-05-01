@@ -6,18 +6,22 @@ body {
     font-family: Staatliches, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
     min-height: 100vh;
+    background-color: #666666;
     padding: 0;
     margin: 0;
-    --display-max-height: 100vh;
     --display-max-width: 1440px;
-    --display-min-width: 100vw;
+    --side-panel-max-width: 400px;
+    --side-panel-optimal-width: 30vw;
+    --side-panel-min-width: 100px;
+    --side-panel-width: clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 30vw), var(--side-panel-max-width, 400px));
     --content-min-width: 600px;
     --content-optimal-width: 70vw;
     --content-horizontal-padding: 60px;
-    --side-panel-max-width: 30vw;
-    --side-panel-optimal-width: 30vw;
-    --side-panel-min-width: 10vw;
+    --content-width: calc(min(var(--display-max-width), 100vw) - var(--side-panel-width));
     --text-input-field-height: 20px;
     --header-font-family: Nunito, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -30,14 +34,15 @@ li {
 .main {
     display: flex;
     flex-direction: row-reverse;
-    max-height: var(--display-max-height, 100vh);
     max-width: var(--display-max-width, 1440px);
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    width: max(var(--content-min-width, 600px), var(--content-optimal-width, 70vw));
+    position: relative;
+    left: calc(var(--side-panel-width) / 2);
+    width: var(--content-width);
     background-color: rgb(240, 243, 245);
 }
 .header-section {
@@ -176,13 +181,15 @@ li {
 }
 
 .side-panel {
-    width: clamp(var(--side-panel-min-width, 200px), var(--side-panel-optimal-width, 30vw), var(--side-panel-max-width, 400px));
+    width: var(--side-panel-width);
     height: var(--display-max-height, 100vh);
-    position: relative;
-    background-image: url(./img/hamdhulla-shakeeb-seaside-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto clamp(600px, var(--display-max-height, 100vh), 100vh);
+    position: fixed;
+    left: calc(50% - calc(var(--side-panel-width) / 2) - calc(var(--content-width) / 2));
+}
+.side-panel img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
 }
 .logo {
     display: flex;
