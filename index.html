@@ -22,41 +22,59 @@
                         <div class="form-content-inputs">
                             <div class="form-content-inputs-container">
                                 <li>
-                                    <label class="form-input-label label-first-name" for="first-name">FIRST NAME*</label>
                                     <input type="text" id="first-name" name="firstname" 
                                         placeholder=" " pattern="^[^0-9]+$"
                                         title="Your name should contain only the letters a-z" required>
+                                    <label class="form-input-label label-first-name"
+                                        for="first-name"
+                                        help="Please enter a valid name"
+                                        >FIRST NAME*</label>
                                 </li>
                                 <li>
-                                    <label class="form-input-label label-last-name" for="last-name">LAST NAME*</label>
                                     <input type="text" id="last-name" name="lastname"
-                                    placeholder=" " pattern="^[^0-9]+$"
-                                    title="Your name should contain only the letters a-z" required>
+                                        placeholder=" " pattern="^[^0-9]+$"
+                                        title="Your name should contain only the letters a-z" required>
+                                    <label class="form-input-label label-last-name"
+                                        for="last-name"
+                                        help="Please enter a valid name"
+                                        >LAST NAME*</label>
                                 </li>
                                 <li>
-                                    <label class="form-input-label label-email" for="email">EMAIL ADDRESS*</label>
                                     <input type="email" id="email" name="email" placeholder=" "
                                         title="Please enter a valid email address in the form name@company"
                                         required>
+                                    <label class="form-input-label label-email"
+                                        for="email"
+                                        help="Please enter a valid email address"
+                                        >EMAIL ADDRESS*</label>
                                 </li>
                                 <li>
-                                    <label class="form-input-label label-phone-number" for="phone-number">TELEPHONE NUMBER</label>
                                     <input type="tel" id="phone-number" name="phonenumber"
-                                    title="Please enter a valid telephone number"
-                                    placeholder=" ">
+                                        title="Please enter a valid telephone number"
+                                        placeholder=" ">
+                                    <label class="form-input-label label-phone-number"
+                                        for="phone-number"
+                                        help=""
+                                        >TELEPHONE NUMBER</label>
                                 </li>
                                 <li>
-                                    <label class="form-input-label label-password-primary" for="password-primary">PASSWORD*</label>
                                     <input type="password" id="password-primary" name="password"
-                                    title="Please enter a valid password"
-                                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-                                    placeholder=" " required>
+                                        title="Please enter a valid password"
+                                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                                        placeholder=" " required>
+                                    <label class="form-input-label label-password-primary"
+                                        for="password-primary"
+                                        help="Passwords do not match"
+                                        >PASSWORD*</label>
                                 </li>
                                 <li>
-                                    <label class="form-input-label label-password-secondary" for="password-secondary">CONFIRM PASSWORD*</label>
                                     <input type="password" id="password-secondary" name="password"
-                                    title="Please enter a valid password and ensure it matches the original"
-                                    placeholder=" " required>
+                                        title="Please enter a valid password and ensure it matches the original"
+                                        placeholder=" " required>
+                                    <label class="form-input-label label-password-secondary"
+                                        for="password-secondary"
+                                        help=""
+                                        >CONFIRM PASSWORD*</label>
                                 </li>
                             </div>
                             <div class="password-requirements">
