@@ -9,9 +9,8 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
-    --page-max-width: 1440px;
-    --page-max-height: 1024px;
     --display-max-height: 100vh;
+    --display-max-width: 1440px;
     --display-min-width: 100vw;
     --content-min-width: 600px;
     --content-optimal-width: 70vw;
@@ -32,7 +31,7 @@ li {
     display: flex;
     flex-direction: row-reverse;
     max-height: var(--display-max-height, 100vh);
-    min-width: var(--display-min-width, 100vh);
+    max-width: var(--display-max-width, 1440px);
 }
 
 .content {
@@ -76,7 +75,7 @@ li {
     align-items: center;
     gap: 24px 70px;
     width: 560px;
-    padding-bottom: 0.7em;
+    padding: 0.7em 0px;
 }
 .form-content-inputs input {
     font-size: 0.6em;
@@ -86,49 +85,38 @@ li {
     width: 220px;
     height: var(--text-input-field-height, 20px);
 }
-.form-content-inputs input:not(:placeholder-shown):invalid {
+.form-content-inputs input[required]:not(:placeholder-shown):invalid {
     outline-color: red;
     background-color: rgba(255, 106, 106, 0.18);
     border-color: red;
 }
-.form-content-inputs input:not(:placeholder-shown):valid {
+.form-content-inputs input[required]:not(:placeholder-shown):valid {
     outline-color: rgb(31, 187, 0);
     background-color: rgba(123, 255, 106, 0.18);
     border-color: rgb(31, 187, 0);
 }
 .form-content .form-input-label {
     position: relative;
-    display: block;
+    top: -42px;
+    display: flex;
+    flex-direction: column;
     font-size: 0.5em;
     font-weight: bold;
     margin-bottom: -6px;
     letter-spacing: 0.08em;
     color: rgb(32, 32, 32);
 }
-.form-content .form-input-label::before {
+.form-content .form-content-inputs label::before {
     position: absolute;
     color: red;
-    content: "";
+    content: attr(help);
     font-weight: normal;
     top: calc(var(--text-input-field-height, 20px) + 22px);
 }
-.form-content-inputs input:not(:placeholder-shown):not(:focus):valid ::before {
+.form-content-inputs input:placeholder-shown + label::before,
+.form-content-inputs input:focus + label::before,
+.form-content-inputs input:valid + label::before {
     color: transparent;
-}
-.form-content .form-input-label:hover::before {
-    color: blue;
-}
-.form-content .form-input-label.label-first-name::before {
-    content: "Please enter a valid name";
-}
-.form-content .form-input-label.label-last-name::before {
-    content: "Please enter a valid name";
-}
-.form-content .form-input-label.label-email::before {
-    content: "Please enter a valid email address";
-}
-.form-content .form-input-label.label-password-primary::before {
-    content: "Passwords do not match";
 }
 .password-requirements {
     align-self: flex-end;
