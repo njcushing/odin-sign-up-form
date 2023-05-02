@@ -34,20 +34,19 @@ li {
 .main {
     display: flex;
     flex-direction: row-reverse;
-    max-width: var(--display-max-width, 1440px);
+    width: 100vw;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: calc(var(--side-panel-width) / 2);
-    width: var(--content-width);
+    left: 0px;
+    width: calc(100vw - var(--side-panel-width));
     background-color: rgb(240, 243, 245);
 }
 .header-section {
     color: rgb(30, 30, 30);
-    flex-shrink: 1;
     padding: 160px var(--content-horizontal-padding, 30px) 30px;
     font-family: var(--header-font-family);
     font-weight: bold;
@@ -184,7 +183,7 @@ li {
     width: var(--side-panel-width);
     height: var(--display-max-height, 100vh);
     position: fixed;
-    left: calc(50% - calc(var(--side-panel-width) / 2) - calc(var(--content-width) / 2));
+    left: 0;
 }
 .side-panel img {
     width: inherit;
