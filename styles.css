@@ -47,10 +47,11 @@ li {
 }
 .header-section {
     color: rgb(30, 30, 30);
+    max-width: 760px;
     padding: 160px var(--content-horizontal-padding, 30px) 30px;
     font-family: var(--header-font-family);
     font-weight: bold;
-    line-height: 1.2em;
+    line-height: 1.8rem;
 }
 .form-title {
     color: rgb(30, 30, 30);
@@ -62,7 +63,7 @@ li {
 .requirement-info {
     padding: 30px var(--content-horizontal-padding, 30px) 0px;
     font-family: var(--header-font-family);
-    font-size: 0.5em;
+    font-size: 0.7rem;
     background-color: white;
 }
 .form-content-inputs {
@@ -79,10 +80,10 @@ li {
     align-items: center;
     gap: 24px 70px;
     width: 560px;
-    padding: 0.7em 0px;
+    padding: 0.7rem 0px;
 }
 .form-content-inputs input {
-    font-size: 0.6em;
+    font-size: 0.9rem;
     border-radius: 6px;
     border: 1px solid #000;
     min-width: 80px;
@@ -107,7 +108,7 @@ li {
     font-size: 0.5em;
     font-weight: bold;
     margin-bottom: -6px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06rem;
     color: rgb(32, 32, 32);
 }
 .form-content .form-content-inputs label::before {
@@ -135,11 +136,11 @@ li {
     align-self: flex-end;
 }
 .password-requirements div {
-    font-size: 0.6em;
+    font-size: 0.9rem;
 }
 .password-requirements li {
     list-style: square;
-    font-size: 0.5em;
+    font-size: 0.75rem;
     color: rgb(11, 175, 11);
 }
 .form-content button {
@@ -147,7 +148,7 @@ li {
     background-color: #596D48;
     border: 0px;
     border-radius: 10px;
-    font-size: 0.7em;
+    font-size: 1.05rem;
     font-weight: bold;
     padding: 18px 54px;
     margin: 44px var(--content-horizontal-padding, 30px) 36px;
@@ -163,7 +164,7 @@ li {
 }
 .log-in {
     font-family: var(--header-font-family);
-    font-size: 0.7em;
+    font-size: 1.05rem;
     font-weight: bold;
     text-decoration: none;
     padding: 0px var(--content-horizontal-padding, 30px);
@@ -204,11 +205,11 @@ li {
 }
 .logo .company-name {
     text-align: center;
-    font-size: 4em;
+    font-size: 6rem;
     color: rgb(226, 226, 226);
 }
 .logo img {
-    width: 4em;
+    width: 6rem;
     padding: 20px 10px;
 }
 .credit {
@@ -217,7 +218,7 @@ li {
     width: inherit;
     font-family: var(--header-font-family);
     text-align: center;
-    font-size: 0.6em;
+    font-size: 0.9rem;
     font-weight: bold;
     color: rgb(226, 226, 226);
     background-color: rgba(0, 0, 0, 0.6);
